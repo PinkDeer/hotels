@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  before_action :find_hotel, only: [:show]
+  before_action :find_hotel, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -18,6 +18,19 @@ class HotelsController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+  def update
+		if @hotel.update(hotel_params)
+			redirect_to @hotel
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@hotel.destroy
+		redirect_to root_path
 	end
 
   private
