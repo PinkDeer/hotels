@@ -1,6 +1,6 @@
 = simple_form_for @hotel do |f|
-  = f.input :name
-  = f.input :price
-  = f.input :rating
-  = f.input :assessement
+  = f.input :name, label: "Hotel"
+  = f.input :price, label: "Price"
+  = f.input :rating, label: "Hotel rating"
+  = f.input :assessement, label: "Assessement"
   = f.submit

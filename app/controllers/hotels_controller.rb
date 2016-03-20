@@ -2,6 +2,7 @@ class HotelsController < ApplicationController
   before_action :find_hotel, only: [:show, :edit, :update, :destroy]
 
   def index
+    @hotel = Hotel.all.order("created_at DESC")
   end
 
   def show

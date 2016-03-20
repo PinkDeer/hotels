@@ -1,8 +1,10 @@
-%h1= @hotel.name
-%p= @hotel.price
-%p= @hotel.rating
-%p= @hotel.assessement
+.col-md-6.col-md-offset-3
+  %h1= @hotel.name
+  %p= @hotel.price
+  %p= @hotel.rating
+  %p= @hotel.assessement
 
-= link_to "Back", root_path
-= link_to "Edit", edit_hotel_path(@hotel)
-= link_to "Delete", hotel_path(@hotel), method: :delete, data: { confirm: "Are you sure?" }
+  .btn-group
+    = link_to "Back", root_path, class: "btn btn-default"
+    = link_to "Edit", edit_hotel_path(@hotel), class: "btn btn-default"
+    = link_to "Delete", hotel_path(@hotel), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
