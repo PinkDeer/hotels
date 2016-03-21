@@ -1,4 +1,4 @@
-!!! 5
+!!!
 %html
 %head
   %title Hotels
@@ -9,10 +9,15 @@
 %body
   %nav.navbar.navbar-default
     .container
-      = link_to "Hotel", root_path, class: "navbar-brand"
+      = link_to "Hotel", root_path
       %ul.nav.navbar-nav.navbar-right
         %li= link_to "New Hotel", new_hotel_path
+        %li= link_to "New Criterion", new_criterion_path
 
   .container
     .row
+      - Criterion.all.each do |cr|
+        %button.btn.btn-default
+          = link_to ("#{cr.name} <span class=\"badge\" style=\"background-color:##{cr.color};\">.</span>").html_safe, nil, {:style=>"display: inline-block;"}
+      %hr
       = yield

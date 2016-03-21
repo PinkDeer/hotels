@@ -1,0 +1,2 @@
+class CriterionsHotelsController < ApplicationController
+end

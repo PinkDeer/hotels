@@ -9,6 +9,6 @@
   - @hotel.each do |hotel|
     %tr
       %td= link_to hotel.name, hotel
-      %td= hotel.price
+      %td= number_to_currency(hotel.price, unit: "руб.", separator: ",", delimiter: " ", format: "%n %u")
       %td= hotel.rating
       %td= hotel.assessement
