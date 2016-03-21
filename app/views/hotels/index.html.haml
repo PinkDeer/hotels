@@ -1,2 +1,14 @@
-- @hotel.each do |hotel|
-  %h2= link_to hotel.name, hotel
+%table.table.table-bordered.table-striped.table-fixed-header{:id => "hotel"}
+  %thead.header
+    %tr
+      %td Hotel
+      %td Price
+      %td Rating
+      %td Assessement
+  %tbody
+  - @hotel.each do |hotel|
+    %tr
+      %td= link_to hotel.name, hotel
+      %td= hotel.price
+      %td= hotel.rating
+      %td= hotel.assessement
